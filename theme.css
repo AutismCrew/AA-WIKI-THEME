@@ -1,0 +1,635 @@
+/* TODO
+- Suggestion bar that shows when you type in search bar.
+- Tables formatting.
+- Navbar (Actually get it to work).
+- Fonts - find how to get it to actually show up.
+*/
+
+@import url("https://fonts.googleapis.com/css?family=Open+Sans%7CPT+Serif&display=swap");
+@font-face {
+    font-family: 'PT Serif', serif;
+    font-family: 'Open Sans', sans-serif;
+}
+
+/* Background image */
+body {
+    background-image: url(http://aaunchained.xyz/images/5/52/Wiki_bg.jpg);
+    background-repeat: no-repeat;
+    background-position: top left;
+    background-color: #101119;
+}
+
+/* The base of the thingy */
+#mw-page-base {
+    background: none;
+}
+
+.mw-body {
+    color: azure;
+    background-color: #292a33;
+    border-color: transparent;
+}
+
+/*Text*/
+h1, h2, h3, h4, h5, h6 {
+    color: #fff;
+    border-color: #818181;
+}
+
+a {
+    color: #7a8087;
+    text-decoration: none;
+    background: none;
+}
+a.new {
+    color:#ca1c1c;
+}
+a.new:visited, #p-personal a.new:visited {
+    color: #9c1d1d;
+}
+
+div#p-personal {
+    background: rgba(0, 0, 0, 0.52);
+    top: 0;
+    right: 0;
+    border-radius: 0 0 0 0.3em;
+}
+#p-personal ul {
+    padding: 0.15em 1em 0 0.4em;
+}
+
+#p-personal ul {
+    display: inline-flex;
+    flex-flow: row wrap;
+    justify-content: flex-end;
+}
+
+#p-personal ul {
+    list-style-type: none;
+    list-style-image: none;
+    margin: 0;
+}
+#mw-panel .portal h3 {
+    color: #fff;
+    font-weight: bold;
+}
+#mw-panel .portal .body {
+    margin-left: 0.5em;
+    padding-top: 0;
+    background-image:none;
+    background-repeat: no-repeat;
+    background-size: 100% 1px;
+}
+
+#mw-panel .portal .body li a:visited {
+    color: rgb(202, 202, 202);
+}
+#mw-panel .portal .body li a {
+    color: rgb(202, 202, 202); 
+}
+a:visited {
+    color: #818181;
+}
+
+/*moves the panel down*/
+div#mw-panel {
+    padding-top: 2.5em;
+}
+
+#p-logo {
+    filter: drop-shadow(0 2px 5px rgba(0,0,0,0.25));
+    margin: -1.5em 0 1.5em;
+}
+
+/* Them tabs */
+div.vectorTabs {
+    background: #292a33;
+}
+div.vectorTabs li.selected{
+    background: #292a33;
+}
+div.vectorTabs ul li {
+    background: #292a33;
+}
+div.vectorTabs ul li:hover a {
+    text-decoration:none;
+}
+div.vectorTabs li a {
+    padding:0 0.75em;
+    color: #7a8087; /*text*/
+}
+div.vectorTabs span {
+    background:none;
+}
+div.vectorTabs span a {
+    padding-top:1em;
+    height:2.25em;
+}
+div.vectorTabs ul li:not(.selected):hover,
+div#mw-head div.vectorMenu h3:hover,
+#p-cactions:hover #p-cactions-label {
+    background:#2f3039;
+}
+div.vectorTabs ul li:not(.selected),
+div#mw-head div.vectorMenu h3 {
+    box-shadow:inset 0 -7px 7px -7px rgba(0,0,0,0.15);
+}
+.ve-activated .vectorTabs .selected {
+    box-shadow:none;
+}
+
+.vectorTabs .new a, .vectorTabs .new a:visited {
+    color: #7a8087; /*text*/
+}
+.vectorTabs .selected a, .vectorTabs .selected a:visited {
+    color: white;
+}
+.vectorMenu li a {
+    color: #7a8087;
+}
+div.vectorMenu {
+    line-height:initial;
+}
+div.vectorMenu h3 span {
+    padding-top:1.1em;
+}
+div.vectorMenu h3 a {
+    height:2.2em;
+}
+div.vectorMenu div.menu {
+    border:1px solid #292a33;
+    box-shadow:0 2px 3px 0 rgba(0,0,0,0.1);
+    background-color: #2f3039;
+}
+#p-cactions-label {
+    padding-right:0.5em;
+}
+#ca-unwatch.icon a,
+#ca-watch.icon a {
+    padding-top:2.95em;
+}
+
+/* Search bar options */
+#p-search {
+    margin:0;
+}
+#p-search form {
+    margin-top:0;
+}
+div#simpleSearch {
+    border:none;
+    background:#373841;
+    height:2.485em;
+    margin-top:0;
+    box-shadow:inset 0 -7px 7px -7px rgba(0,0,0,0.15)
+}
+#searchInput {
+    border: none;
+}
+#simpleSearch input {
+    color: #7a8087;
+    border: 0;
+    margin: 0;
+    background-color: transparent;
+}
+/* removes outline to searchbar when you click it */
+#searchInput:focus, #simpleSearch:hover #searchInput:focus {
+    outline: none;
+    border-color: none;
+    box-shadow: none;
+}
+div#simpleSearch {
+    background: #373841;
+}
+div#simpleSearch #searchInput {
+    font-family:'IBM Plex Sans','Helvetica Neue','Arial',sans-serif;
+    padding:1em 0 0 0.75em
+}
+div#simpleSearch #searchButton {
+    width:2.5em;
+}
+#siteNotice {
+    text-align:center;
+    margin:0.75em 0 1em;
+}
+.sitedir-ltr .mw-dismissable-notice-body {
+    margin:0;
+}
+form#editform {
+    margin-top:1.25em;
+}
+.button {
+    background:#438ab5;
+    border:1px solid #2a83bb;
+    color:#fff;
+    cursor:pointer;
+    display:inline-block;
+    font-size:12px;
+    height:19px;
+    line-height:20px;
+    padding:0 10px;
+}
+#t-specialpages,
+#t-recentchangeslinked,
+#t-print,
+#t-permalink {
+    display:none
+}
+.vectorMenu {
+    background-color: #292a33;
+}
+.vectorMenu .menu {
+    list-style: none;
+    background-color: #292a33;
+}
+
+/*Auto generated content List for pages*/
+#toc,
+.toc {
+    font-size:0.9em;
+    background:#373841;
+    margin-top:0.75em;
+    padding:0;
+    border:none;
+    box-shadow:0 0.25rem 0.35rem -0.25rem rgba(0,0,0,0.1);
+}
+#toc .toctitle,
+.toc .toctitle {
+    background:#292a33;
+    border:1px solid #333333;
+    padding:0.25em 1em;
+}
+#toc .toctitle h2,
+.toc .toctitle h2,
+#toc .toctitle a,
+.toc .toctitle a {
+    color:#e6e6e6;
+    font-weight: bolder;
+}
+#toc .toclevel-1 a,
+.toc .toclevel-1 a {
+    color: #e6e6e6;
+}
+
+#toc .toclevel-2 a,
+.toc .toclevel-2 a {
+    color:#e6e6e6;
+}
+#toc > ul,
+.toc > ul {
+    border:1px solid #333333;
+    border-top:none;
+    line-height:1.8em;
+    padding:0.75em 1.75em;
+    margin:0;
+}
+/* This controls the dotted lines that show for second tier items */
+#toc ul ul,
+.toc ul ul {
+    border-left:1px dotted #292a33;
+    padding-left:0.5em;
+} 
+
+.toctoggle {
+    padding-left:0.2em;
+}
+.tocnumber {
+    display:none;
+}
+.toclimit-2 #toc .toclevel-2,
+.toclimit-3 #toc .toclevel-3,
+.toclimit-4 #toc .toclevel-4,
+.toclimit-5 #toc .toclevel-5,
+.toclimit-6 #toc .toclevel-6,
+.toclimit-7 #toc .toclevel-7 {
+    display:none;
+}
+.toctogglelabel {
+    cursor: pointer;
+    color: #7a8087;
+}
+
+/* Infobox template style */
+.infobox {
+	border: 1px solid #333333;
+	border-spacing: 3px;
+	background-color: #373841;
+	color: #e6e6e6;
+	/* @noflip */
+	margin: 0.5em 0 0.5em 1em;
+	padding: 0.2em;
+	/* @noflip */
+	float: right;
+	/* @noflip */
+	clear: right;
+	font-size: 88%;
+	line-height: 1.5em;
+}
+.infobox caption {
+	font-size: 125%;
+	font-weight: bold;
+	padding: 0.2em;
+	text-align: center;
+}
+.infobox td,
+.infobox th {
+	vertical-align: top;
+	/* @noflip */
+	text-align: left;
+}
+.infobox.bordered {
+	border-collapse: collapse;
+}
+.infobox.bordered td,
+.infobox.bordered th {
+	border: 1px solid #333333;
+}
+.infobox.bordered .borderless td,
+.infobox.bordered .borderless th {
+	border: 0;
+}
+
+.infobox.sisterproject {
+	width: 20em;
+	font-size: 90%;
+}
+
+.infobox.standard-talk {
+	border: 1px solid #333333;
+	background-color: #2f3039;
+}
+.infobox.standard-talk.bordered td,
+.infobox.standard-talk.bordered th {
+	border: 1px solid #333333;
+}
+
+/* styles for bordered infobox with merged rows */
+.infobox.bordered .mergedtoprow td,
+.infobox.bordered .mergedtoprow th {
+	border: 0;
+	border-top: 1px solid #333333;
+	/* @noflip */
+	border-right: 1px solid #333333;
+}
+
+.infobox.bordered .mergedrow td,
+.infobox.bordered .mergedrow th {
+	border: 0;
+	/* @noflip */
+	border-right: 1px solid #333333;
+}
+
+/* Styles for geography infoboxes, eg countries,
+   country subdivisions, cities, etc.            */
+.infobox.geography {
+	border-collapse: collapse;
+	line-height: 1.2em;
+	font-size: 90%;
+}
+
+.infobox.geography  td,
+.infobox.geography  th {
+	border-top: 1px solid #333333;
+	padding: 0.4em 0.6em 0.4em 0.6em;
+}
+.infobox.geography .mergedtoprow td,
+.infobox.geography .mergedtoprow th {
+	border-top: 1px solid #333333;
+	padding: 0.4em 0.6em 0.2em 0.6em;
+}
+
+.infobox.geography .mergedrow td,
+.infobox.geography .mergedrow th {
+	border: 0;
+	padding: 0 0.6em 0.2em 0.6em;
+}
+
+.infobox.geography .mergedbottomrow td,
+.infobox.geography .mergedbottomrow th {
+	border-top: 0;
+	border-bottom: 1px solid #333333;
+	padding: 0 0.6em 0.4em 0.6em;
+}
+
+.infobox.geography .maptable td,
+.infobox.geography .maptable th {
+	border: 0;
+	padding: 0;
+}
+
+/* TABLES!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+/* Normal font styling for wikitable row headers with scope="row" tag */
+.wikitable.plainrowheaders th[scope=row] {
+	font-weight: normal;
+	/* @noflip */
+	text-align: left;
+}
+/* Lists in wikitable data cells are always left-aligned */
+.wikitable td ul,
+.wikitable td ol,
+.wikitable td dl {
+	/* @noflip */
+	text-align: left;
+}
+/* ...unless they also use the hlist class */
+.toc.hlist ul,
+#toc.hlist ul,
+.wikitable.hlist td ul,
+.wikitable.hlist td ol,
+.wikitable.hlist td dl {
+	text-align: inherit;
+}
+/* actual tables formatting*/
+table.wikitable {
+    color: #e6e6e6;
+    background: #373841;
+    font-size: 0.9em;
+    box-shadow: 0 0.25rem 0.35rem -0.25rem rgba(0,0,0,0.1);
+    border: none;
+    border-collapse: collapse;
+    margin: 1em 0;
+}
+table.wikitable > * > tr > td {
+    border-color: #292a33;
+}
+.wikitable > * > tr > th {
+    background-color: #2f3039;
+    text-align: center;
+    border-color: #292a33;
+}
+
+/* Fixes for older version */
+div.vectorTabs li.selected a, div.vectorTabs li.selected a:visited {
+    color: #e6e6e6;
+    text-decoration: none;
+}
+table.wikitable > * > tr > th {
+    background-color: #2f3039;
+    text-align: center;
+    border: 1px solid #292a33;
+}
+table.wikitable tr:not(:first-child):hover {
+    color: rgba(63, 63, 63, 0.4);
+    background: #e1f4d3;
+}
+div.vectorMenu h3 span {
+    color: #e6e6e6;
+}
+div.vectorMenu li a {
+    color: #e6e6e6;
+}
+/* removes that weird white thing next to search bar */
+div#mw-head div.vectorMenu h3 {
+    background-image: none;
+}
+
+/* Page history stuff */
+#pagehistory li.selected {
+    background-color: #2f3039;
+    color: #e6e6e6;
+    border: 1px dashed #333333;
+}
+#pagehistory li {
+    border: 1px solid #333333;
+}
+
+/* navbox */
+.navbox {
+    font-size: 0.85em;
+    background: #2f3039;
+    margin: 15px auto;
+    width: 100%;
+    clear: both;
+}
+.navbox:not(.navbox-collapsible) {
+    box-shadow: 0 2px 3px -2px rgba(0,0,0,0.1)
+}
+.navbox .navbox-title {
+    font-size: 110%;
+    background: #373841;
+    color: #ffffff;
+    text-align: center;
+    padding: 3px 8px;
+}
+.navbox .navbox-title .mw-collapsible-toggle {
+    font-size: 0.9em;
+    margin-left: 6em;
+    float: right;
+}
+.navbox .navbox-title a {
+    color: #ffffff;
+}
+.navbox .navbox-title a:visited {
+    color: #ffffff;
+}
+.navbox .navbox-footer {
+    background: #373841;
+    border-top: 1px;
+    text-align: center;
+    font-size: smaller;
+}
+.navbox .navbox-footer a {
+    color: #ffffff;
+}
+.navbox .navbox-footer a:visited {
+    color: #ffffff;
+}
+.navbox .navbox-group-title {
+    background: #2f3039;
+    border: 1px solid #333333;
+    border-width: 0 1px 1px 0;
+    font-weight: bold;
+    padding: 0 10px 5px 10px;
+    width: 100px;
+}
+.navbox .navbox-group-title a:visited {
+    color: #373841;
+}
+.navbox .navbox-list {
+    border-bottom: 1px solid #333333;
+    padding: 0 7px;
+}
+.navbox .navbox-list ul {
+    margin: 0;
+}
+.navbox .navbox-list li {
+    display: inline-block;
+}
+.navbox .navbox-list li + li::before {
+    content: ' • ';
+    white-space: nowrap;
+}
+.navbox .navbox-subgroup {
+    border-spacing: 0;
+    width: 100%;
+}
+.navbox .navbox-subgroup .navbox-group-title {
+    padding-bottom: 5px;
+}
+.navbox .navbox.navbox-collapsible {
+    font-size: 100%;
+    margin: 5px 0 0;
+}
+.navbox .navbox.navbox-collapsible .navbox-title {
+    background: #373841;
+    padding: 0 8px;
+}
+.navbox img {
+    height: auto;
+    width: auto;
+    max-height: 1.6em;
+    padding: 0 1px;
+}
+.navbox + .navbox {
+    margin-top: -8px;
+}
+.navbox-data {
+    display: none;
+}
+.navbox-data + .navbox {
+    margin-top: -8px;
+}
+.pathmap .wikitable > tfoot {
+    display: none;
+}
+.pathmap table.wikitable {
+    width: auto !important;
+    display: table-cell;
+    border: none;
+}
+.pathmap table.wikitable td {
+    height: 30px;
+    width: 30px;
+    padding: 0 !important;
+    border-bottom-width: 2px;
+}
+.perk-link {
+    background: #292a33;
+    border-radius: 111px;
+    width: 35px;
+    height: 35px;
+    line-height: 30px;
+    display: inline-table;
+    margin-right: 5px;
+    text-align: center;
+}
+.perk-link.perk-link-nobg {
+    background: transparent;
+}
+.perk-link > a {
+    vertical-align: middle;
+}
+.perk-link .perk-link-rank {
+    position: relative;
+    top: -26px;
+    left: 5px;
+    margin-bottom: -28px;
+    line-height: 0;
+    float: left;
+}
+.perk-background {
+    background: #373841;
+}
+.navbox .perk-link img {
+    max-height: initial;
+}
